@@ -1,0 +1,85 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/static/pic2.jpg') no-repeat center center fixed ;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Center alignment for the main content */
+
+.header {
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    background: rgba(7, 16, 24, 0.477); /* Floating background with opacity */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styling */
+.header h1 {
+    font-size: 3rem;
+    margin: 0;
+    color: #bfe6ff;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #c9d3f4;
+}
+
+/* Upload form styling */
+.upload p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.upload input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+.upload button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eef0a9;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload button:hover {
+    background-color: #ff9900;
+}
+
+/* Footer styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Footer links or additional content styling */
+footer p {
+    margin: 5px 0;
+}
