@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeZen</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+
+    <div class="headerAnalytics">
+        <h1>CodeZen</h1>
+        <h2>Artic Challenge Hackathon 2024</h2>
+    </div>
+
+<div class="container">
+    <!-- Download and meta data section--- -->
+    <div class="download">
+        <p>Click on the button to download your CSV file </p>
+        <!-- Download button -->
+        <a href="{{ url_for('download_csv') }}">
+        <button class="download_btn">Download</button>
+        </a>
+
+        <!-- Button to toggle the collapsible section -->
+       <button class="collapsible">Metadata</button>
+       <div class="content">
+        <p><b>Dataset Description</b></p>
+        <p>
+            This dataset contains daily energy consumption and weather data starting from 
+            <strong>January 1, 2023</strong>. It includes weather features 
+            (e.g., temperature, wind speed, rainfall) that may influence energy usage.
+        </p>
+
+        <p><b>Columns:</b></p>
+        <ul>
+            <li><strong>Date:</strong> The date of the record (<em>DD-MM-YYYY</em>).</li>
+            <li><strong>Consumption:</strong> Daily energy consumption (float).</li>
+            <li><strong>weather_code (WMO code):</strong> WMO weather code representing weather conditions (integer).</li>
+            <li><strong>temperature_2m_max (°C):</strong> Max temperature at 2m above ground level (float).</li>
+            <li><strong>daylight_duration (s):</strong> Duration of daylight in seconds (float).</li>
+            <li><strong>rain_sum (mm):</strong> Total rainfall for the day (mm).</li>
+            <li><strong>snowfall_sum (cm):</strong> Total snowfall for the day (cm).</li>
+            <li><strong>wind_speed_10m_max (km/h):</strong> Max wind speed at 10m above ground level (km/h).</li>
+        </ul>
+
+        <p><b>Usage:</b></p>
+        <p>
+            Ideal for forecasting energy consumption and analyzing the impact of weather on energy usage.
+        </p>
+       </div>
+
+       <script>
+        // Get all collapsible buttons
+        var coll = document.getElementsByClassName("collapsible");
+
+        // Loop through each button and add the click event listener
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                // Toggle the "active" class to change the appearance of the button
+                this.classList.toggle("active");
+
+                // Get the associated content div
+                var content = this.nextElementSibling;
+
+                // Toggle the display of the content div
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+        </script>
+   </div>
+
+<div class ="visual">
+<!--visulize button-->
+<p>Also want to get some insight into your data? Click the visulize button </p>
+<!-- Download button -->
+<a href="{{ url_for('visualize') }}">
+<button class="visul_btn">Visualize</button>
+</a>
+</div>
+
+</div>
+
+
+    <footer>
+        <p>Alka | Tamanna | Thushari | Grace</p>
+        <p>GENIAL</p>
+</footer>
+</body>
+</html>
