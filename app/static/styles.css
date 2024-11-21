@@ -63,6 +63,25 @@ body {
     transition: background-color 0.3s;
 }
 
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload{
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #f8f8f8;
+    color: #000;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #f9f3ab;
+}
+
+
 .upload_btn:hover,.download_btn:hover {
     background-color: #fcc470;
 }
