@@ -1,7 +1,10 @@
 from flask import render_template, request, redirect, url_for, flash,send_file
 from app import app
 import pandas as pd
+from app.Utils.standardisation import standardise_file
 import os
+from config import Config, DirectoryPath
+
 
 @app.route('/')
 def home():
@@ -21,7 +24,11 @@ def upload_file():
     if file and file.filename.endswith('.csv'):
         try:
             # Attempt to read the CSV file with a specified encoding
-            data = pd.read_csv(file, encoding='ISO-8859-1')  # or try 'latin1'
+            print(file)
+            data = pd.read_csv(file, encoding='utf-8')  # or try 'latin1'
+            print("Read Data")
+            print(data)
+            standardise_file(file.filename, data)
             processed_data = data.to_dict(orient='records')
             return render_template('output.html', data=processed_data)
         except UnicodeDecodeError:
@@ -35,7 +42,7 @@ def upload_file():
 @app.route('/download_csv', methods=['GET'])
 def download_csv():
     # Define the path to the file you want to send
-    file_path = r'C:\Users\israh\Documents\Python Scripts\flask\downloads\processed_data.csv'
+    file_path = os.path.join(DirectoryPath.DOWNLOAD_FOLDER, Config.DOWNLOAD_NAME)
     
     # Check if the file exists
     if not os.path.exists(file_path):
@@ -43,7 +50,7 @@ def download_csv():
         return redirect(url_for('home'))
 
     # Send the file directly for download
-    return send_file(file_path, as_attachment=True, download_name='processed_data.csv')
+    return send_file(file_path, as_attachment=True, download_name= Config.DOWNLOAD_NAME)
 
 @app.route('/visualize')
 def visualize():
