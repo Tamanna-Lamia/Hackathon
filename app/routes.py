@@ -1,6 +1,7 @@
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash,send_file
 from app import app
 import pandas as pd
+import os
 
 @app.route('/')
 def home():
@@ -33,18 +34,16 @@ def upload_file():
 
 @app.route('/download_csv', methods=['GET'])
 def download_csv():
-    if 'processed_data' not in globals():
-        flash('No data available for download.')
+    # Define the path to the file you want to send
+    file_path = r'C:\Users\israh\Documents\Python Scripts\flask\downloads\processed_data.csv'
+    
+    # Check if the file exists
+    if not os.path.exists(file_path):
+        flash('The file does not exist.')
         return redirect(url_for('home'))
 
-    df = pd.DataFrame(processed_data)
-    temp_file_path = 'uploads/processed_data.csv'
-    df.to_csv(temp_file_path, index=False)
-
-    # Serve the file for download
-    response = send_file(temp_file_path, as_attachment=True, download_name='processed_data.csv')
-    
-    return response
+    # Send the file directly for download
+    return send_file(file_path, as_attachment=True, download_name='processed_data.csv')
 
 @app.route('/visualize')
 def visualize():
