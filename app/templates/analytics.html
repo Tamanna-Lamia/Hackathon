@@ -13,23 +13,12 @@
     </div>
 
     <div class="card-container">
-        <figure>
-            <img src="https://picsum.photos/id/475/250/300" alt="Mountains">
-            <figcaption>The Day</figcaption>
-        </figure>
-        <figure >
-            <img src="https://picsum.photos/id/475/250/300" alt="Mountains">
-            <figcaption>The Night</figcaption>
-        </figure>
-        <figure>
-            <img src="https://picsum.photos/id/287/250/300" alt="Mountains">
-            <figcaption>The Day</figcaption>
-        </figure>
-        <figure >
-            <img src="https://picsum.photos/id/475/250/300" alt="Mountains">
-            <figcaption>The Night</figcaption>
-        </figure>
-    
+            {% for plot in plots %}
+            <figure>
+                <img src="{{ plot }}" alt="Plot">
+                <figcaption>Dynamic Plot</figcaption>
+            </figure>
+            {% endfor %}
     </div>
 
     <footer>

@@ -17,4 +17,5 @@ class DirectoryPath:
     WEATHER_DIRECTORY = os.path.join(BASE_DIR, 'weatherData')
     DOWNLOAD_FOLDER = os.path.join(BASE_DIR,'downloads')
     UPLOAD_FOLDER = os.path.join(BASE_DIR,'uploads')
+    PLOTS_FOLDER = os.path.join(BASE_DIR,'app','static','plots')
 

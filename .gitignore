@@ -53,3 +53,5 @@ docker-compose.override.yml
 
 # Ignore Jupyter Notebook checkpoints (if used)
 .ipynb_checkpoints/
+
+downloads/

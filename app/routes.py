@@ -54,7 +54,12 @@ def download_csv():
 
 @app.route('/visualize')
 def visualize():
-    # Logic for visualization or passing data to the new page
-    return render_template('analytics.html')  # Render a visualization page
+    plot_files = [
+        url_for('static', filename='plots/correlation_heatmap.png'),
+        url_for('static', filename='plots/plot1.png'),
+        url_for('static', filename='plots/plot2.png'),
+        url_for('static', filename='plots/plot3.png')
+    ]
+    return render_template('analytics.html', plots=plot_files)  # Render a visualization page
 
 

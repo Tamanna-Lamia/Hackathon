@@ -4,7 +4,7 @@ from pathlib import Path as PathlibPath
 from app.Utils.utils import parse_file_name
 from config import DirectoryPath, Config
 from datetime import datetime
-
+from app.Utils.visualisation import visualise_data
 
 def rename_columns_with_aliases(df, column_aliases):
     # Create a mapping of current column names to target names
@@ -122,6 +122,8 @@ def standardise_file(filename, data):
     print("Weather Data", weather_data.head())
     merged_data = add_weather_data(cleaned_data, weather_data)
     write_to_file(merged_data)
+    visualise_data(merged_data)
+    
     
     
     
