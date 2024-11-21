@@ -6,13 +6,28 @@ from config import DirectoryPath, Config
 from datetime import datetime
 
 
+def rename_columns_with_aliases(df, column_aliases):
+    # Create a mapping of current column names to target names
+    column_mapping = {}
+    for target_name, aliases in column_aliases.items():
+        for alias in aliases:
+            if alias in df.columns:
+                column_mapping[alias] = target_name
+                break  # Stop once the first match is found
+
+    # Rename columns
+    df.rename(columns=column_mapping, inplace=True)
+    return df
+
 def clean_data(df):
     # Rename columns from Swedish to English
-    column_mapping = {
-        "Period": "Timestamp",  # Rename 'Period' to 'Timestamp'
-        "Förbrukning": "Consumption"  # Rename 'Förbrukning' to 'Consumption'
-    }
-    df.rename(columns=column_mapping, inplace=True)
+    # column_mapping = {
+    #     "Period": "Timestamp",  # Rename 'Period' to 'Timestamp'
+    #     "Förbrukning": "Consumption"  # Rename 'Förbrukning' to 'Consumption'
+    # }
+    # df.rename(columns=column_mapping, inplace=True)
+
+    df = rename_columns_with_aliases(df, Config.COLUMN_ALIASES)
 
     # Check for null values
     print("Checking for null values...")
