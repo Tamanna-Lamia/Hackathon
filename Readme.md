@@ -1,4 +1,3 @@
-{
 # CodeZen: Flask CSV Visualization App
 
 Welcome to **CodeZen**, a Flask-based application that allows users to upload a CSV file and visualize its data as labels and values.
@@ -35,28 +34,29 @@ Follow these steps to set up the project locally:
 ```bash
 git clone <repository-url>
 cd <repository-folder>
-
+```
 Create a Virtual Environment bash
-
+```
 python -m venv venv
-
+```
 Activate the Virtual Environment On Windows:
-
+```
 venv\Scripts\activate
-
+```
 On macOS/Linux:
+```
 source venv/bin/activate
-
+```
 4. Install Dependencies
-
+```
 pip install -r requirements.txt
-
-Running the Application
-1. Start the Flask Server
+```
+## Running the Application
+### 1. Start the Flask Server
 Run the following command to start the Flask development server:
+```
 python app.py
-
-2. Access the Application
+```
+### 2. Access the Application
 Open your browser and navigate to:
-arduino
-http://127.0.0.1:5000
+http://127.0.0.1:5000(http://127.0.0.1:5000)
