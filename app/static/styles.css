@@ -52,25 +52,25 @@ body {
     color: #000;
 }
 
-.upload button {
+.upload_btn,.download_btn,.visul_btn {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #eef0a9;
+    background-color: #fceab8;
     color: #000;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.upload button:hover {
-    background-color: #ff9900;
+.upload_btn:hover,.download_btn:hover {
+    background-color: #fcc470;
 }
 
 /* Footer styling */
 footer {
-    position: fixed;
     bottom: 0;
+    position: fixed;
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
@@ -82,4 +82,62 @@ footer {
 /* Footer links or additional content styling */
 footer p {
     margin: 5px 0;
+}
+
+.headerAnalytics{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    background: rgba(15, 31, 46, 0.519); /* Floating background with opacity */
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Add space between the two sections */
+    padding: 20px;
+}
+
+.download,.visual{
+    margin: auto;
+    text-align: center;
+    background: rgba(7, 16, 24, 0.477); /* Floating background with opacity */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download{
+    width: 60%;
+}
+
+.visual{
+    width: 40%;
+}
+.collapsible {
+    margin-top: 10px;
+    background-color: rgba(43, 43, 43, 0.705);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+.active, .collapsible:hover {
+    background-color: #222022;
+}
+
+/* Style the collapsible content */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #222022
 }
