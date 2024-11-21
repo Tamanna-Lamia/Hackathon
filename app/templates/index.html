@@ -15,8 +15,8 @@
     <h2>Artic Challenge Hackathon 2024</h2>
     
     <p>Upload a CSV file to generate a visual <strong>Label</strong> and <strong>Value</strong>.</p>
-    <form id="uploadForm" method="POST" enctype="multipart/form-data">
-        <input type="file" id="fileInput" name="file" accept=".csv" />
+    <form id="uploadForm" method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" accept=".csv, .xlsx" />
         <button type="submit">Upload and Visualize</button>
     </form>
 </div>

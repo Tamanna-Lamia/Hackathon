@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeZen</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <div class="header">
+        <h1>CodeZen</h1>
+        <h2>Artic Challenge Hackathon 2024</h2>
+    </div>
+    
+    
+    <h1>CSV Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <!-- Loop through the keys of the first record to create table headers -->
+                {% for key in data[0].keys() %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through each record and display data in table rows -->
+            {% for row in data %}
+                <tr>
+                    {% for value in row.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>
+        <p>Alka | Tamanna | Thushari | Grace</p>
+        <p>GENIAL</p>
+</footer>
+</body>
+</html>
