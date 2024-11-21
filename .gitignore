@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables and virtual environments
+env/
+venv/
+ENV/
+.venv/
+.ENV/
+myenv/  # Add your specific virtual environment folder if named differently
+*.env
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+
+# Logs and debug information
+*.log
+logs/
+debug.log
+
+# Static files (optional, if they are generated dynamically)
+staticfiles/
+media/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Pytest and coverage
+.coverage
+*.cover
+*.py,cover
+htmlcov/
+.cache
+.tox/
+nosetests.xml
+coverage.xml
+*.pytest_cache/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker related
+docker-compose.override.yml
+*.env.docker
+
+# Ignore Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
