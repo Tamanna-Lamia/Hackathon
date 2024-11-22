@@ -40,15 +40,14 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
   gap: 5px;
-  max-width: 100%;
+  max-height: 100%;
   margin: 5px auto;
-
 }
 
 /* Style for each card */
 figure {
   display: grid;
-  width: 400px;
+  width: 450px;
   height: 350px; /* Adjust height for a more landscape card */
   border-radius: 0.5rem;
   overflow: hidden;
@@ -111,12 +110,11 @@ footer p {
 /* Responsiveness: Adjust to 1 column on small screens */
 @media (max-width: 768px) {
   .card-container {
-      grid-template-columns: 1fr; /* 1 card per row for smaller screens */
+    grid-template-columns: 1fr; /* 1 card per row for smaller screens */
   }
 }
 
 /* Upload form styling */
-
 
 /* Header Analytics styling */
 .headerAnalytics {
