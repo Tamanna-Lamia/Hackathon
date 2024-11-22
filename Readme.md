@@ -7,9 +7,6 @@ Welcome to **CodeZen**, a Flask-based application that allows users to upload a 
 - [Requirements](#requirements)
 - [Setup Instructions](#setup-instructions)
 - [Running the Application](#running-the-application)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributors](#contributors)
 
 ---
 
