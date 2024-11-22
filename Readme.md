@@ -29,8 +29,8 @@ Follow these steps to set up the project locally:
 
 ### 1. Clone the Repository
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/Tamanna-Lamia/Hackathon
+cd WebApp
 ```
 Create a Virtual Environment bash
 ```
